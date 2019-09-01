@@ -1,0 +1,27 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <wux-radio-group name="c" value="{{ value3 }}" title="性别" bind:change="onChange3">
+    <wux-radio thumb="https://ws1.sinaimg.cn/large/b04b21b7ly1g0swkr17qmj205k05ka9x.jpg" title="男" value="1" />
+    <wux-radio thumb="https://ws1.sinaimg.cn/large/b04b21b7ly1g0swkr1aduj205k05k745.jpg" title="女" value="2" />
+  </wux-radio-group>
+
+
+  <wux-cell-group title="快递信息">
+    <wux-cell hover-class="none">
+      <wux-input clear label="收货人" placeholder="请输入收货人姓名" />
+    </wux-cell>
+    <wux-cell hover-class="none">
+      <wux-input label="手机号" placeholder="请输入手机号" value="{{ value }}" controlled error="{{ error }}" type="number" bind:change="onChange1" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:error="onError" />
+    </wux-cell>
+  </wux-cell-group>
+
+  <wux-cell-group title="收货地址">
+    <wux-cell  hover-class="none">
+      <wux-textarea controlled="false" value="{{addresstxt}}" name="address" placeholder="请输入收货地址">
+        <view class="weui-textarea-icon" bindtap="chooseLocation">
+          <image style="width: 30px; height: 30px; margin-right: 5px" src="https://ws1.sinaimg.cn/large/b04b21b7ly1g0symierfuj205k05kglh.jpg"></image>
+        </view>
+      </wux-textarea>
+    </wux-cell>
+  </wux-cell-group>
+  <wux-button block type="positive">添加</wux-button>
+</form>

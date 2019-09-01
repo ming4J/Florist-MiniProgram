@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" style=" white-space: nowrap; display: flex" >
+<!-- 轮播图组件-->
+<view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}' bindchange="bindchange"  circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
+    <block wx:for='{{imgList}}' wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad"/>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+<!-- 公告组件-->
+<van-notice-bar
+  left-icon="/images/notice.svg"
+  text="今日商城特价优惠啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦！"
+/>
+
+<wux-divider dashed text="极速选花" />
+<wux-grids  bordered="{{false}}" col="4">
+      <wux-grid bindtap="sendfather" thumb="/images/father.svg" label="送长辈" />
+      <wux-grid bindtap="sendgf" thumb="/images/gf.svg" label="送女友" />
+      <wux-grid bindtap="sendill" thumb="/images/ill.svg" label="送病号" />
+      <wux-grid bindtap="sendbrith" thumb="/images/brith.svg" label="送寿星" />
+</wux-grids>
+
+<wux-divider dashed text="店铺热销" />
+<scroll-view scroll-x class="scroll-x">
+  <view wx:for="{{hotList}}" wx:key="{{index}}" class="view-parent">
+    <view class="view-item"bindtap="toDetail">
+        <image class="item-image" src="{{item.pic}}"></image>
+        <b class="item-name">{{item.title}}</b>
+        <b class="item-price">{{item.desc}}</b>
+        <van-icon class="item-button" name="cart-o" size="20px" />
+    </view>
+  </view>
+</scroll-view>
+<wux-divider dashed text="店铺上新" />
+<scroll-view scroll-x class="scroll-x" style="margin-bottom:50px">
+  <view wx:for="{{newList}}" wx:key="{{index}}" class="view-parent" >
+    <view class="view-item" bindtap="toDetail">
+        <image class="item-image" src="{{item.pic}}"></image>
+        <b class="item-name">{{item.title}}</b>
+        <b class="item-price">{{item.desc}}</b>
+        <van-icon class="item-button" name="cart-o" size="20px" />
+    </view>
+  </view>
+</scroll-view>
+
+<!-- ButomBar组件-->
+
+
+</scroll-view>

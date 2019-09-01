@@ -1,0 +1,42 @@
+<scroll-view scroll-y="true" class="goods">
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}" interval='{{interval}}' bindchange="bindchange" circular="{{circular}}" style="height:{{imgheights[current]}}rpx;">
+      <block wx:for='{{imgList}}' wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view wx:for="{{goodsinfo}}" wx:key="{{index}}" class="goodsInfo">
+  <text class="name">{{item.goodsName}}</text>
+  <text class="desc">{{item.goodsDecs}}</text>
+  <text class="price">￥{{item.goodsPrice}}</text>
+  <s class="realprice">￥{{item.goodsRealPrice}}</s>
+  <text class="num">已售{{item.goodsSaleNum}}件</text>
+  </view>
+  <van-tabs class="goodsIntro" bind:click="onClick">
+    <van-tab title="详情">
+      <view class="imgcontont" wx:for='{{intro}}' wx:key="{{index}}">
+        <image mode="widthFix" class="goodsimg" src="{{item}}"></image>
+      </view>
+    </van-tab>
+    <van-tab title="评价">
+      <view class="ping" wx:for='{{rated}}' wx:key="{{index}}">
+        <view class="ping_son">
+          <wux-avatar class="userava" size="large" src="{{item.avatar}}" />
+          <text>{{item.username}}</text>
+        </view>
+        <view class="ping_rate_txt">
+          <van-rate value="{{ item.rate }}" readonly="true" />
+          <text>{{item.value}}</text>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</scroll-view>
+<van-goods-action class="btn">
+  <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
+  <van-goods-action-button text="加入购物车" type="warning" bind:click="onClickButton" />
+  <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+</van-goods-action>

@@ -1,0 +1,4 @@
+<view class="btn-plus" bindtap="toAddressAdd">
+            <image class="icon" src="/images/iconfont-plus-circle.png" />
+            <text>新增地址</text>
+</view>

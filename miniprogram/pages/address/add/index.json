@@ -1,0 +1,14 @@
+
+{
+  "navigationBarTitleText": "新增地址",
+  "usingComponents": {
+      "wux-radio-group": "/dist/dist/radio-group/index",
+      "wux-radio": "/dist/dist/radio/index",
+      "wux-cell-group": "/dist/dist/cell-group/index",
+      "wux-cell": "/dist/dist/cell/index",
+      "wux-input": "/dist/dist/input/index",
+      "wux-textarea": "/dist/dist/textarea/index",
+      "wux-icon": "/dist/dist/icon/index",
+      "wux-button": "/dist/dist/button/index"
+  }
+}

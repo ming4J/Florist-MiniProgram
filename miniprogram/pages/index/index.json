@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-notice-bar": "/dist/notice-bar/index",
+    "wux-icon": "/dist/dist/icon/index",
+    "wux-grids": "/dist/dist/grids/index",
+    "wux-grid": "/dist/dist/grid/index",
+    "wux-divider": "/dist/dist/divider/index",
+    "van-icon": "/dist/icon/index"
+    
+  }
+}
